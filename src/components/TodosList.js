@@ -1,9 +1,17 @@
 import React from 'react';
+import TodoItem from './TodoItem';
 
-function TodosList() {
+function TodosList(props) {
+  console.log(props.todos);
   return (
     <>
-      <h2>Hey</h2>
+      <ul>
+        {
+          props.todos.map((todo) => (
+            <TodoItem key={todo.id} todo={todo.title} />
+          ))
+        }
+      </ul>
     </>
   );
 }
